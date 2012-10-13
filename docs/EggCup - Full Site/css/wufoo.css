@@ -1,0 +1,26 @@
+/* - - - - - - - - - - - - - - - - - - - - -
+
+ Title : Regal Egg Cups
+ Author : Jack Parsons (@jacksaidwhat)
+ URL : http://
+
+ Last Updated : 26/05/12
+
+- - - - - - - - - - - - - - - - - - - - - */
+#container, html.embed {
+background-color: #d7effb;
+}
+body {
+margin: 17px 0 15px 0;
+padding: 0;
+text-align: center;
+font-size: small;
+font-family: Georgia, "Times New Roman", Times, serif;
+}
+#saveForm {
+   border: 1px solid #ccc;
+   margin-right: 560px;
+}
+#errorLi {
+display:none;
+}

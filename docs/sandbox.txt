@@ -1,0 +1,221 @@
+#################################
+.::Gmail::.
+email: regalsandbox2012@gmail.com
+password: af4Af4@$$aas
+################################
+.::Paypal Sandbox::.
+email: regalsandbox2012@gmail.com
+password: af4Af4@$$aas
+whats the name of your first school: Barnfield
+Whats the name of your first pet: George
+################################
+.::Live API Signature::.
+API Username:	joshua_api1.provokateur.com
+API Password:	X3CJ3MDTT3KX7XX9
+Signature: A04lfsCmNyKHwpXwU6fGGZvWty8VA0RIeDCOp0iobo8yUfOgS6a-M.kp	
+################################
+.::PayPal Sandbox Seller Account::.
+Firstname: regal
+Lastname: eggs
+Login email: regals@gmail.com
+Password: af4Af4@$$aas
+###############################
+.::PayPal Sandbox Buyer Account::.
+Email: regabu_1338062618_per@gmail.com
+Password: buysomething
+###############################
+.::PayPal Sandbox API Details::.
+Test Account: regals_1338017698_biz@gmail.com  	
+API Username: regals_1338017698_biz_api1.gmail.com
+API Password: 1338017728
+Signature: AVg8oVhfFX2zzu.R1hsLQwL-OEO1Arojf.EV4r0M85h9D8r1lyEIx09n
+###############################
+Backend
+username: admin
+password: b5a7sw0rkin
+##################################
+
+  public function getOrderExportFields()
+  {
+    $fields[] = 'processed';
+    $fields[] = 'orderhash';
+    $fields[] = 'email';
+    $fields[] = 'payerid';
+    $fields[] = 'payerstatus';
+    $fields[] = 'firstname';
+    $fields[] = 'lastname';
+    $fields[] = 'countrycode';
+    $fields[] = 'shiptoname';
+    $fields[] = 'shiptostreet';
+    $fields[] = 'shiptocity'; 
+    $fields[] = 'shiptostate';
+    $fields[] = 'shiptozip';
+    $fields[] = 'shiptocountrycode';
+    $fields[] = 'shiptocountryname'; 
+    $fields[] = 'sellernote'; 
+    $fields[] = 'addressstatus'; 
+    $fields[] = 'quantity';  
+    $fields[] = 'shipping';
+    $fields[] = 'eggprice'; 
+    $fields[] = 'total'; 
+    $fields[] = 'status'; 
+    $fields[] = 'created_at';
+    $fields[] = 'updated_at';
+    
+    return $fields;
+  }
+  
+  
+  public function getFileName() 
+  {
+    
+  }
+  
+  /**
+   * Converts an array to CSV text
+   *
+   * @param array The data
+   *
+   * @return string the CSV formatted text
+   */
+  protected function getCsvText($data)
+  {
+    // $filename = tempnam(sys_get_temp_dir(), 'tf');
+    if($this->csvfilname=="") {
+      $this->filename = sfConfig::get('sf_data_dir').sfConfig::get('app_csv_export_path').time().".csv";
+    }
+
+    $fh = fopen($this->filename, 'w');
+
+    foreach($data as $line)
+    {
+      fputcsv($fh, $line);
+    }
+
+    fclose($fh);
+    $csv = file_get_contents($this->filename);
+    
+    //unlink($filename);
+    return $csv;
+  }
+
+  /**
+   * 
+   * @param array $data
+   * @param array $fields
+   * @return array 
+   */
+  public function getDataRow($data, $fields)
+  {
+    if(count($fields)>0) {
+      foreach($fields as $field) {
+        $rowData[] = $data->$field;        
+      }
+      return $rowData;      
+    } else {
+      return false;
+    }
+  }
+  
+   /**
+   * Generates a CSV export for the selected fields.
+   *
+   * The form needs to be validated in order to produce any content.
+   *
+   * @param OrderExportForm $form The form
+   *
+   * @return string The content of the CSV export
+   */
+  protected function getExportCsvContent()
+  {
+    $retval = '';
+    $data   = array();
+    $labels = array();
+
+    $orders = $this->getExportOrders();
+    if($orders != false) {
+      
+      $fields = $this->getOrderExportFields();
+      
+      $csvData[] = $fields;
+      
+      foreach($orders as $order) {
+        // get the csv list
+        $csvData[] = $this->getDataRow($order, $fields);
+        // update the order to be processed..
+        $order->processed="yes";
+        $order->save();
+      }
+      
+      $retval = $this->getCsvText($csvData);
+      return $retval;
+      
+    } else {
+      die('there are no orders to export with processed="no"');
+    }
+  }
+
+  /**
+   * Returns the orders for the export.
+   *
+   * @param OrderExportForm $form The order export form
+   *
+   * @return Doctrine_Collection
+   */
+  protected function getExportOrders($form = null)
+  {
+    $orders = OrderTable::getAllUnprocessedOrders();
+    if(count($orders)>0) {
+      return $orders;
+    } else {
+      return false;
+    }
+  } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Order:
+  actAs: { Timestampable: ~ }
+Order:
+  actAs: { Timestampable: ~ }
+  columns:
+    payerid: { type: string(255) }    
+    email: { type: string(255) }
+    payerstatus: { type: string(255) }
+    firstname: { type: string(255) }
+    lastname: { type: string(255) }    
+    street1: { type: string(255) }
+    street2: { type: string(255) }
+    cityname: { type: string(255) }
+    stateprovince: { type: string(255) }
+    postalcode: { type: string(255) }
+    countrycode: { type: string(255) }
+    invnum { type: string(255) }
+    token:  { type: string(255) }
+    timestamp: { type: string(255) }
+    correlationid: { type: string(255) }
+    ack: { type: string(255) }
+    version: { type: string(255) }
+    quantity: { type: string(255) }
+    amount: { type: string(255) }
+    build: { type: string(255) }
+
+SiteSetting:
+  actAs: { Timestampable: ~ }
+  columns:
+    name:  { type: string(255) }
+    value: { type: string(255) }
+    slug: { type: string(255) }

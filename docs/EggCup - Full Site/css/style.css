@@ -1,0 +1,293 @@
+/*  
+	Created on: 24-May-2012
+    Author: Jack Parsons (@jacksaidwhat)
+*/
+* {margin: 0; padding: 0; border: 0px none;}
+html, body, #wrap { height: 100%; }
+body > #wrap {height: auto; min-height: 980px;}
+.clear {clear:both;}
+body {
+	background: #d7effb url('../images/ribbon.gif') no-repeat top;
+	color: #2b3990;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	min-height: 1135px;
+}
+#main {
+	width:775px;
+	margin:0 auto;
+	min-height:100%;
+	display:block;
+	padding: 0 0 0 0;
+}
+#mainwide {
+	width:899px;
+	margin:0 auto;
+	min-height:100%;
+	display:block;
+	padding: 0 0 0 0;
+}
+/* CLEAR FIX*/
+.clearfix:after {content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+.center {
+margin: 0 auto;
+display:block;
+}
+
+/*--------------- HEADER ---------------*/
+#navwrap {
+	height: 52px;
+	width: 775px;
+	background:url('../images/navbacker.png') no-repeat;
+	margin: 0 auto;
+}
+ul#nav {
+	height: 52px;
+	width: 775px;
+	background:url('../images/navSprite.png') no-repeat;
+}
+ul#nav li, ul#nav li  a {
+	height: 52px;
+	width: 155px;
+	display:block;
+}
+ul#nav li {
+	float: left;
+    list-style: none;
+    display: inline;
+    text-indent: -9999em;
+}
+
+#home a:hover, #home a.active {background:url("../images/navSprite.png") 0px -52px no-repeat;}
+#story a:hover, #story a.active {background:url("../images/navSprite.png") -155px -52px no-repeat;}
+#purchase a:hover, #purchase a.active{background:url("../images/navSprite.png") -310px -52px no-repeat;}
+#press a:hover, #press a.active {background:url("../images/navSprite.png") -465px -52px no-repeat;}
+#contact a:hover, #contact a.active {background:url("../images/navSprite.png") -620px -52px no-repeat;}
+
+/*--------------- HOME ---------------*/
+#frame {
+	width: 775px;
+	height: 464px;
+	display:block;
+	background:url('../images/slides/slideframe.jpg') no-repeat;
+	margin: 13px 0 7px 0;
+}
+#crestline {
+	width: 775px;
+	height: 107px;
+	display:block;
+	margin: 10px 0 0 0;
+}
+
+/*--------------- STORY ---------------*/
+#widewrap {
+width: 838px;
+height: auto;
+margin-left: 61px;
+}
+#leftcol{
+width: 400px;
+height: auto;
+margin-top:46px;
+float:left;
+}
+#rightcol {
+	width: 420px;
+	height: auto;
+	display: block;
+	float:left;
+	margin:29px 0 0 15px;
+}
+
+/*--------------- PURCHASE ---------------*/
+#purchaseimg {
+	margin: 13px 0 7px 0;
+}
+#one, #two, #three {
+margin-top: 20px;
+float:left;
+}
+#one,#three {
+width: 212px;
+min-height: 109px;
+}
+#two {
+width: 350px;
+}
+.selectTitle {
+float: left;
+width: 100px;
+height: 33px;
+text-align: right;
+padding: 5px 10px 5px 0;
+}
+.selectTitle p {
+line-height: 33px;
+font-size: 18px;
+color: #8b8d90;
+}
+.styleSelect select {
+   font: 15px Georgia, "Times New Roman", Times, serif;
+   color: #797979;
+   width: 228px;
+   padding: 5px;
+   border: 1px solid #ccc;
+   height: 34px;
+   margin: 5px 0;
+}
+#buynow {
+   width: 109px;
+   height: 33px;
+   border: 1px solid #ccc;
+   margin: 5px 0 0 110px;
+}
+/*--------------- PRESS ---------------*/
+#dlone, #dltwo, #dlthree  {
+	width: 120px;
+	float:left;
+}
+#dlone img, #dltwo img, #dlthree img {
+   border: 1px solid #ccc;
+}
+#dltwo{
+margin: 0 18px 0 18px;
+}
+.download {
+margin-top:10px;
+}
+#rightcolpress {
+	width: 361px;
+	height: auto;
+	display: block;
+	float:left;
+	margin:29px 0 0 48px;
+}
+
+/*--------------- CONTACT PAGE ---------------*/
+#contacttext {
+margin-top:46px;
+width: 770px;
+}
+#contacttext p {
+	font-size: 15px;
+	line-height: 19px;
+	padding:10px 0 3px 2px;
+}
+
+/*--------------- FAQs ---------------*/
+#faqs {margin-top: 26px;}
+#faqs li  h3 {padding-bottom: 20px; font-style: normal;}
+#faqs li  p {padding-left: 5px;line-height: 19px; font-style: italic;}
+#faqs li {
+list-style:none;
+padding: 20px 0 20px 0;
+border-bottom: 2px solid #c2deec;
+width: 760px;
+}
+
+/*--------------- Lightpages ---------------*/
+#terms_panel,#policy_panel,#contact_panel {
+padding: 60px;
+margin: 20px;
+width: 508px;
+background-color: #2b3990;
+border: 2px solid #CF9C51;
+font-size: 11px;
+color:#ffffff;
+}
+
+#terms_panel p,#policy_panel p,#contact_panel p {
+padding: 5px 0 5px 0;
+}
+
+/*--------------- GLOBAL TEXT ---------------*/
+h1 {
+	font-size: 29px;
+	font-weight: normal;
+	text-align: center;
+}
+h2 {
+	font-size: 22px;
+	font-weight: normal;
+	text-align: center;
+	padding-top: 5px;
+}
+h3 {
+	font-size: 21px;
+	font-weight: normal;
+	font-style: italic;
+}
+
+#leftcol p {
+	font-size: 15px;
+	line-height: 19px;
+	padding:10px 0 3px 2px;
+}
+
+p a:link {
+color:#2b3990;
+}
+
+p a:hover {
+color:#C59851;
+}
+
+#buynow:hover, .download:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+}
+
+/*---------------FOOTER---------------*/
+#footwrap {
+	width: 775px;
+	height: 100px;
+	margin: 0 auto;
+
+}
+ul#social {
+	width: 375px;
+	margin:0 auto;
+}
+ul#social li {
+	float:left;
+	list-style: none;
+}
+#tweet {
+	padding-left: 10px;
+}
+ul#footer {
+    font-family: 13px Georgia, "Times New Roman", Times, serif;
+	text-align: center;
+	padding: 20px 0 50px 0;
+}
+ul#footer li{
+    list-style: none;
+	display:inline;
+	padding: 0 5px;
+}
+#mid { 
+border-left: 1px solid #2b3988; border-right: 1px solid #2b3988;
+}
+ul#footer li a {
+text-decoration:none;
+color:#2b3988;
+}
+ul#footer li a:hover {
+color:#C59851;
+}
+
+
+
+
