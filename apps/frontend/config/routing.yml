@@ -1,0 +1,34 @@
+# Successful PayPal Transaction
+home:
+  url:   /
+  param: { module: site, action: home }
+  
+donate:
+  url:   /donate/
+  param: { module: site, action: donate }
+  
+about_kev:
+  url:   /about_kev/
+  param: { module: site, action: aboutKev }  
+ 
+where_donations_go:
+  url:   /where_donations_go/
+  param: { module: site, action: whereDonationsGo }    
+
+events:
+  url:   /events/
+  param: { module: site, action: events }    
+
+payPalConfirmation:
+  url:   /confirm/
+  param: { module: site, action: payPalConfirmation }
+
+# Cancelled PayPal Transaction
+payPalCancel:
+  url:   /cancel/
+  param: { module: site, action: payPalCancel }
+  
+# PayPal Payment Page
+paypalPayment:
+  url:   /purchase/
+  param: { module: site, action: paypalPayment }

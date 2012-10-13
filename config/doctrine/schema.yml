@@ -1,0 +1,39 @@
+Donation:
+  tableName: donations
+  actAs: [Timestampable]
+  columns:
+    processed: string(255)
+    donationhash: string(255)    
+    email: string(255)
+    payerid: string(255)
+    payerstatus: string(255)
+    firstname: string(255)
+    lastname: string(255)
+    countrycode: string(255)
+    shiptoname: string(255)    
+    shiptostreet: string(255)    
+    shiptostreet2: string(255)        
+    shiptocity: string(255)    
+    shiptostate: string(255)
+    shiptozip: string(255)
+    shiptophonenum: string(255)    
+    shiptocountrycode: string(255)
+    shiptocountryname: string(255)
+    sellernote: string(255)
+    donationmessage: text
+    anonymous: boolean
+    addressstatus: string(255)
+    quantity: int(11)  
+    shipping: 
+      type: decimal(8)
+      scale: 2
+      unsigned: true
+    eggprice: 
+      type: decimal(8)
+      scale: 2
+      unsigned: true
+    total: 
+      type: decimal(8)
+      scale: 2
+      unsigned: true
+    status: string(255)

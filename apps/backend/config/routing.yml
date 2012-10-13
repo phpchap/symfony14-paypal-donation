@@ -1,0 +1,28 @@
+order:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Order
+    module:               order
+    prefix_path:          /order
+    column:               id
+    with_wildcard_routes: true
+
+site_setting:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SiteSetting
+    module:               site_setting
+    prefix_path:          /site_setting
+    column:               id
+    with_wildcard_routes: true
+
+# default rules
+order_export:
+  url:   /order/export
+  param: { module: order, action: export }
+  
+  
+# default rules
+homepage:
+  url:   /
+  param: { module: dashboard, action: index }

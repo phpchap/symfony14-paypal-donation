@@ -1,0 +1,22 @@
+# database configuration for different environments
+dev:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=dev'
+      username: dev
+      password: dev
+stage:
+  doctrine: 
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=127.0.0.1;dbname=stage'
+      username: stage
+      password: stage
+live:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=127.0.0.1;dbname=live'
+      username: live
+      password: live

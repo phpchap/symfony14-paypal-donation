@@ -1,0 +1,28 @@
+dev:
+  paypal:
+    user:  "" # API username
+    pwd:   "" # API password
+    signature: "" # API signature
+    sandbox: "" # Sandbox enabled
+    paypal_checkout: "" # Paypal checkout enabled
+  facebook_page_url: "" # Facebook fan page    
+stage:
+  paypal:
+    user:  "" # API username
+    pwd:   "" # API password
+    signature: "" # API signature
+    sandbox: "" # Sandbox enabled
+    paypal_checkout: "" # Paypal checkout enabled
+  facebook_page_url: "" # Facebook fan page
+live:
+  paypal:
+    user:  "" # API username
+    pwd:   "" # API password
+    signature: "" # API signature
+    sandbox: "" # Sandbox enabled
+    paypal_checkout: "" # Paypal checkout enabled
+  facebook_page_url: "" # Facebook fan page
+all:
+  product_name: "" # paypal product name
+  product_description: "" # paypal description
+  currency_code: "" # currency code
